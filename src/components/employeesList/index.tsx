@@ -1,6 +1,4 @@
 import styled from "styled-components"
-// import api from '../../services/api'
-// import { useEffect, useState } from "react"
 import { EmployeesData } from "../../interfaces/employeesData"
 
 interface EmployeeProps {
@@ -8,7 +6,6 @@ interface EmployeeProps {
 }
 
 export const EmployeesList = ({ employees }: EmployeeProps) => {
-
     function changeDateFormat(date: string) {
         const onlyDate = new Date(date).toLocaleDateString('pt-BR')
         return(onlyDate)
@@ -63,10 +60,6 @@ const Table = styled.table`
         background: white;
         border-bottom: 1px solid #ccc;
     }
-    tbody td.image-prompt {
-        //width: 100px;
-        //height: 100px;
-    }
     tbody td img {
         width: 40px;
         height: 40px;
@@ -77,6 +70,6 @@ const Table = styled.table`
         width: 100%;
         display: block;
         overflow-x: auto;
-        -webkit-overflow-scrolling touch;
+        -webkit-overflow-scrolling: touch;
     }
 `

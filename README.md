@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# Frontend - Coding Test BeTalent
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse repositório contém o frontend de um sistema de gerenciamento de funcionários e cargos. Ele foi desenvolvido utilizando **React**, **Styled Components** e **Vite**. A aplicação se comunica com o backend para exibir informações sobre funcionários, como nome, cargo, foto, telefone e data de admissão.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** - Biblioteca para a construção de interfaces de usuário.
+- **React Router DOM** - Biblioteca para navegação entre páginas.
+- **Styled Components** - Biblioteca para estilização de componentes React.
+- **Axios** - Biblioteca para fazer requisições HTTP.
+- **Vite** - Ferramenta para bundling e desenvolvimento rápido.
+- **TypeScript** - Superset de JavaScript que adiciona tipagem estática ao código.
 
-## Expanding the ESLint configuration
+## Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Antes de rodar o projeto, você precisa ter o seguinte instalado em sua máquina:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Node.js** (preferencialmente a versão LTS)
+- **npm** ou **yarn**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalação
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone o repositório**:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   ```bash
+   git clone https://github.com/Seila-dev/codingTest-beTalent-client.git
+   cd codingTest-beTalent-client
+
+2. **Instale as dependências**:
+    ```bash
+    npm install
+## Como Rodar o Projeto
+Após a instalação das dependências, você pode rodar o projeto localmente.
+
+1. **Inicie o servidor de desenvolvimento**
+  ```bash
+  npm run dev
+  ```
+
+Isso vai iniciar o servidor de desenvolvimento na porta 5173. Agora você pode acessar o frontend do seu projeto através de http://localhost:5173.
+
+## Como Funciona
+
+1. **Requisição para o Backend**: O frontend faz uma requisição GET para a API no backend para obter os dados dos funcionários. O useEffect é utilizado para buscar esses dados assim que o componente é carregado.
+
+2. **Exibição dos Funcionários**: Após obter os dados, os funcionários são armazenados no estado employeesGroup e exibidos em uma tabela. Há um campo de busca no qual o usuário pode digitar o nome de um funcionário para filtrá-lo.
+
+3. **Estilização**: A aplicação é estilizada utilizando styled-components. Os componentes são estilizados de forma isolada e reutilizável.
+
+## Contribuindo
+
+Se você deseja contribuir para este repositório, siga os passos abaixo:
+
+1. Faça um fork deste repositório.
+2. Crie uma branch para a sua feature (git checkout -b minha-feature).
+3. Faça commit das suas alterações (git commit -am 'Adicionando nova feature').
+4. Envie para o repositório remoto (git push origin minha-feature).
+5. Abra um pull request.
